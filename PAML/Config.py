@@ -2,7 +2,7 @@ config_db = {
     'input_dir': 'data_process/dbook',
     'output_dir': 'res/dbook',
     'dataset': 'dbook',
-    # 'use_cuda': True,
+    ## 'use_cuda': True,
     'use_cuda': False,
 
     'gpu': '2',
