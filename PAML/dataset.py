@@ -62,6 +62,7 @@ class dbook(object):
         return user_neighbor
     
 # # modifying
+# data process, return a dictionary containing user:groups  {user1: [g1, g2, g3], user2: [g1, g2, g3]}
     def get_user_groups_list(self):
         input_dir = "data/dbook/original/"
         user_groups = pd.read_csv(input_dir + 'user_group.dat', names=['user', 'group'], sep='\t', engine='python')
@@ -70,12 +71,14 @@ class dbook(object):
         user_groups_list = user_groups.groupby('user')['group'].apply(list).to_dict()
         return user_groups_list # dictionary  {user1: [g1, g2, g3], user2: [g1, g2, g3]}
     
+# data process, return all groups list [group1, group2 ....]
     def get_all_groups_list(self):
         input_dir = "data/dbook/original/"
         ug = pd.read_csv(input_dir + 'user_group.dat', names=['user', 'group'], sep='\t', engine='python')
         all_group_list = ug['group'].unique().tolist()
         return all_group_list # [group1, group2 ....]
     
+# data process, return a list containing user：group pairs [(user1, group1), (user2, group2)]  
     def get_user_group_list(self):
         input_dir = "data/dbook/original/"
         ug = pd.read_csv(input_dir + 'user_group.dat', names=['user', 'group'], sep='\t', engine='python')
