@@ -77,9 +77,7 @@ def find_other_iids(iid, iid_fid_dict, fid_iid_dict):
     return iid_prob
 
 # #modify
-# def create_user_group_map():
-#     return 
-
+# calculate the similarity between two users if they are in same groups, return similarity score, if not, return 0
 def get_group_similarity(uid1, uid2, user_groups_list):
     uid1_groups = set(user_groups_list[uid1])
     uid2_groups = set(user_groups_list[uid2])
